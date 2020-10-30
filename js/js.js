@@ -10,14 +10,33 @@ function start() { // Inicio da função start()
 	//Principais variáveis do jogo
 	
 var jogo = {}
+var TECLA = {
+	upArrow: 38,
+	downArrow: 40,
+	s: 83  
+	}
+
+	jogo.pressionou = [];
+
+	//Verifica se o usuário pressionou alguma tecla	
+	
+	$(document).keydown(function(e){
+		jogo.pressionou[e.which] = true;
+		});
+	
+	
+		$(document).keyup(function(e){
+		   jogo.pressionou[e.which] = false;
+		});
 	
 //Game Loop
 
-jogo.timer = setInterval(loop,50/*milessegundos*/);
+jogo.timer = setInterval(loop,5/*milessegundos*/);
 
 function loop() {
 
 movefundo();
+movejogador();
 
 } // Fim da função loop()
 
@@ -26,10 +45,32 @@ movefundo();
 	
 function movefundo() {
 	
-	esquerda = parseInt($("#fundoGame").css("background-position"));
-	$("#fundoGame").css("background-position",esquerda-5/*px*/);
+	esquerda = parseFloat($("#fundoGame").css("background-position"));
+	$("#fundoGame").css("background-position",esquerda-0.5/*px*/);
 	
 	} // fim da função movefundo()
+
+	
+	function movejogador() {
+	
+	if (jogo.pressionou[TECLA.upArrow]) {
+		var topo = parseInt($("#jogador").css("top"));
+		$("#jogador").css("top",topo-3);
+
+	}
+	
+	if (jogo.pressionou[TECLA.downArrow]) {
+		
+		var topo = parseInt($("#jogador").css("top"));
+		$("#jogador").css("top",topo+3);	
+	}
+	
+	if (jogo.pressionou[TECLA.S]) {
+		
+		//Chama função Disparo	
+	}
+
+	} // fim da função movejogador()
 
 
 
