@@ -55,14 +55,27 @@ function movefundo() {
 	
 	if (jogo.pressionou[TECLA.upArrow]) {
 		var topo = parseInt($("#jogador").css("top"));
-		$("#jogador").css("top",topo-3);
+		$("#jogador").css("top",topo-4);
+
+		if (topo<=4) {
+		
+			$("#jogador").css("top",topo+0);
+		}
 
 	}
 	
 	if (jogo.pressionou[TECLA.downArrow]) {
 		
 		var topo = parseInt($("#jogador").css("top"));
-		$("#jogador").css("top",topo+3);	
+		$("#jogador").css("top",topo+4);
+
+		if (topo>=430) {	
+			$("#jogador").css("top",topo-0);
+				
+		}
+
+		
+		
 	}
 	
 	if (jogo.pressionou[TECLA.S]) {
