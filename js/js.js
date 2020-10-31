@@ -178,7 +178,6 @@ function colisao() {
 	var colisao1 = ($("#jogador").collision($("#inimigo1")));
 	// jogador com o inimigo1
 		
-	if (($("#inimigo1").css("left"))<=182){
 			
 		if (colisao1.length>0) {
 			
@@ -190,8 +189,6 @@ function colisao() {
 			$("#inimigo1").css("left",694);
 			$("#inimigo1").css("top",posicaoY);
 			}
-
-	}
 	   
 		
 	
