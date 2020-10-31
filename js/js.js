@@ -21,6 +21,8 @@ var TECLA = {
 	var velocidade=5;
     var posicaoY = parseInt(Math.random() * 334);
 
+	
+	
 	//Verifica se o usuário pressionou alguma tecla	
 	
 	$(document).keydown(function(e){
@@ -32,6 +34,8 @@ var TECLA = {
 		   jogo.pressionou[e.which] = false;
 		});
 	
+
+
 //Game Loop
 
 jogo.timer = setInterval(loop,30/*milessegundos*/);
@@ -41,6 +45,8 @@ function loop() {
 movefundo();
 movejogador();
 moveinimigo1() 
+moveinimigo2();
+moveamigo()
 
 } // Fim da função loop()
 
@@ -98,11 +104,38 @@ function movefundo() {
 		
 		if (posicaoX<=0) {
 		posicaoY = parseInt(Math.random() * 334);
-		$("#inimigo1").css("left",694);
+		$("#inimigo1").css("left",689);
 		$("#inimigo1").css("top",posicaoY);
 			
 		}
 } //Fim da função moveinimigo1()
+
+
+
+function moveinimigo2() {
+	posicaoX = parseInt($("#inimigo2").css("left"));
+$("#inimigo2").css("left",posicaoX-3);
+			
+	if (posicaoX<=0) {
+		
+	$("#inimigo2").css("left",775);
+				
+	}
+} // Fim da função moveinimigo2()
+
+
+function moveamigo() {
+	
+	posicaoX = parseInt($("#amigo").css("left"));
+	$("#amigo").css("left",posicaoX+1);
+				
+		if (posicaoX>906) {
+			
+		$("#amigo").css("left",0);
+					
+		}
+
+} // fim da função moveamigo()
 
 
 
