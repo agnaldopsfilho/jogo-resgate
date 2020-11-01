@@ -240,7 +240,7 @@ function colisao() {
 
 			// Disparo com o inimigo1
 		
-		if (colisao3.length>0) {
+		if (colisao3.length>0) {	
 			velocidade=velocidade+0.3
 			pontos=pontos+100;
 		
