@@ -26,7 +26,7 @@ function start() { // Inicio da função start()
 
 	jogo.pressionou = [];
 
-	var velocidade=6;
+	var velocidade=5;
 	var posicaoY = parseInt(Math.random() * 334);
 	
 
@@ -212,6 +212,7 @@ function colisao() {
 			// jogador com o inimigo2 
 		if (colisao2.length>0) {
 			
+			
 			energiaAtual--;
 	
 			inimigo2X = parseInt($("#inimigo2").css("left"));
@@ -228,7 +229,7 @@ function colisao() {
 			// Disparo com o inimigo1
 		
 		if (colisao3.length>0) {
-			
+			velocidade=velocidade+0.3
 			pontos=pontos+100;
 		
 		
