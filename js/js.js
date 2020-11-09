@@ -95,17 +95,17 @@ function movefundo() {
 	
 			if (esquerda<=4) {
 			
-				$("#jogador").css("left",esquerda-10);
+				$("#jogador").css("left",esquerda-0);
 			}
 		}
 	
 	if (jogo.pressionou[TECLA.upArrow]) {
 		var topo = parseInt($("#jogador").css("top"));
-		$("#jogador").css("top",topo-6);
+		$("#jogador").css("top",topo-10);
 
 		if (topo<=4) {
 		
-			$("#jogador").css("top",topo+10);
+			$("#jogador").css("top",topo+0);
 		}
 	}
 
