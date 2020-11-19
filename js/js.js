@@ -89,7 +89,11 @@ function movefundo() {
 	
 	function movejogador() {
 
-		if (jogo.pressionou[TECLA.leftArrow]) {
+		if (jogo.pressionou[TECLA.leftArrow])
+		/*	  ^	     ^			^^	
+			jogo.pressionou[e.which] = true*/
+		
+		{
 			var esquerda = parseInt($("#jogador").css("left"));
 			$("#jogador").css("left",esquerda-10);
 	
